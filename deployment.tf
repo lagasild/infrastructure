@@ -1,4 +1,4 @@
-module heroku_apps {
+module "heroku" {
     source = "./heroku_module"
     name = "devops-exam" 
     buildpacks = [    

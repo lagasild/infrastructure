@@ -36,3 +36,19 @@ resource "heroku_pipeline_coupling" "production" {
   stage = "production"
 }
 
+
+resource "heroku_pipeline" "test_to_staging" {
+  name = "${var.name}-pipeline-deploy"
+}
+
+resource "heroku_pipeline_coupling" "test_to_staging_test" {
+  app = "${heroku_app.test.name}"
+  pipeline = "${heroku_pipeline.test_to_staging.id}"
+  stage = "staging" #i.e. "first" stage on Heroku
+}
+
+resource "heroku_pipeline_coupling" "test_to_staging_staging" {
+  app = "${heroku_app.staging.name}"
+  pipeline = "${heroku_pipeline.test_to_staging.id}"
+  stage = "production"
+}

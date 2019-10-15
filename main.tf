@@ -8,7 +8,7 @@ terraform {
 
 module heroku_apps {
     source = "./module"
-    name = "exam" 
+    name = "devops-exam" 
     buildpacks = [    
         "heroku/java"
     ]

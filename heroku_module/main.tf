@@ -21,7 +21,7 @@ resource "heroku_app" "production" {
 
 # Pipelines
 resource "heroku_pipeline" "deploy" {
-  name = "${var.name}-pipeline-deploy"
+  name = "${var.name}-pipeline-to-production"
 }
 
 resource "heroku_pipeline_coupling" "staging" {
@@ -38,7 +38,7 @@ resource "heroku_pipeline_coupling" "production" {
 
 
 resource "heroku_pipeline" "test_to_staging" {
-  name = "${var.name}-pipeline-test_to_staging"
+  name = "${var.name}-pipeline-to-staging"
 }
 
 resource "heroku_pipeline_coupling" "test_to_staging_test" {

@@ -20,7 +20,7 @@ resource "heroku_app" "production" {
 }
 
 # Pipelines
-resource "heroku_pipeline" "deploy" {
+/*resource "heroku_pipeline" "deploy" {
   name = "${var.name}-production"
 }
 
@@ -34,20 +34,20 @@ resource "heroku_pipeline_coupling" "production" {
   app = "${heroku_app.production.name}"
   pipeline = "${heroku_pipeline.deploy.id}"
   stage = "production"
-}
+}*/
 
 
 resource "heroku_pipeline" "test_to_staging" {
   name = "${var.name}-staging"
 }
 
-resource "heroku_pipeline_coupling" "test_to_staging_test" {
+resource "heroku_pipeline_coupling" "to_staging_test" {
   app = "${heroku_app.test.name}"
   pipeline = "${heroku_pipeline.test_to_staging.id}"
   stage = "staging" #i.e. "first" stage on Heroku
 }
 
-resource "heroku_pipeline_coupling" "test_to_staging_staging" {
+resource "heroku_pipeline_coupling" "to_staging_staging" {
   app = "${heroku_app.staging.name}"
   pipeline = "${heroku_pipeline.test_to_staging.id}"
   stage = "production"

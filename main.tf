@@ -6,10 +6,10 @@ terraform {
     }
 }
 
-module heroku_apps {
-    source = "./module"
-    name = "devops-exam" 
-    buildpacks = [    
+module "heroku_module" {
+    source = "./heroku_module"
+    name = "devops-exam"
+    buildpacks = [
         "heroku/java"
     ]
 }

@@ -3,9 +3,20 @@ provider "statuscake" {
     username = "lagasild"
 }
 
-resource "statuscake_test" "prod" {
-    website_name = "app-test" #test makes sense for this exam, usually this would be prod.
-    website_url = "${module.heroku_module.test_url}devices"
+
+# NOTE: I have added tests for staging and prod.
+
+resource "statuscake_test" "stagint" {
+    website_name = "app-test"
+    website_url = "${module.heroku_module.staging_url}devices"
+    test_type = "HTTP"
+    check_rate = "300"
+    contact_group = ["Default Contact Group"]
+}
+
+resource "statuscake_test" "production" {
+    website_name = "app-test"
+    website_url = "${module.heroku_module.production_url}devices"
     test_type = "HTTP"
     check_rate = "300"
     contact_group = ["Default Contact Group"]

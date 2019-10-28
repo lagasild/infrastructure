@@ -3,8 +3,6 @@ provider "opsgenie" {
   api_url = "api.eu.opsgenie.com"
 }
 
-//TODO: set API key in travis
-
 ## Users:
 // because it alreayd exists
 data "opsgenie_user" "opsgenie_owner" {

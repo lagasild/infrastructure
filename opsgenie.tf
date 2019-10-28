@@ -68,7 +68,7 @@ resource "opsgenie_schedule_rotation" "exam_rotation" {
   length      = 1
 
   /*participant { # would assign entire team
-    type = "user" # Change to users if "team" is not supported
+    type = "user"
     id   = "${opsgenie_team.exam_team.id}"
   }*/
 

@@ -6,8 +6,8 @@ provider "statuscake" {
 
 # NOTE: I have added tests for staging and prod.
 
-resource "statuscake_test" "stagint" {
-    website_name = "app-test"
+resource "statuscake_test" "staging" {
+    website_name = "app-staging-test"
     website_url = "${module.heroku_module.staging_url}devices"
     test_type = "HTTP"
     check_rate = "300"
@@ -15,7 +15,7 @@ resource "statuscake_test" "stagint" {
 }
 
 resource "statuscake_test" "production" {
-    website_name = "app-test"
+    website_name = "app-production-test"
     website_url = "${module.heroku_module.production_url}devices"
     test_type = "HTTP"
     check_rate = "300"

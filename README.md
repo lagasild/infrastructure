@@ -1,4 +1,4 @@
-# Infrastructure
+# Infrastructure [![Build Status](https://travis-ci.org/lagasild/infrastructure.svg?branch=master)](https://travis-ci.org/lagasild/infrastructure)
 Infrastructure code for exam at at Kristiania University College
 
 ## Setup 

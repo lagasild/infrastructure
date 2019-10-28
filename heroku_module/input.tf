@@ -14,3 +14,11 @@ variable region {
   default = "eu"
   type = "string"
 }
+
+variable logz_url {
+  description = "URL for logz.io"
+}
+
+variable logz_token {
+  description = "Token for logz.io"
+}

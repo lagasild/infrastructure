@@ -1,22 +1,39 @@
-provider "heroku" {}
+provider "heroku" {
+  version = "2.2.1"
+}
 
 # Creating apps:
 resource "heroku_app" "test" {
   name = "${var.name}-test"
   region = "${var.region}"
   buildpacks = "${var.buildpacks}"
+
+  sensitive_config_vars = {
+    LOGZ_TOKEN = "${var.logz_token}"
+    LOGZ_URL = "${var.logz_url}"
+  }
 }
 
 resource "heroku_app" "staging" {
   name = "${var.name}-staging"
   region = "${var.region}"
   buildpacks = "${var.buildpacks}"
+
+  sensitive_config_vars = {
+    LOGZ_TOKEN = "${var.logz_token}"
+    LOGZ_URL = "${var.logz_url}"
+  }
 }
 
 resource "heroku_app" "production" {
   name = "${var.name}-production"
   region = "${var.region}"
   buildpacks = "${var.buildpacks}"
+
+  sensitive_config_vars = {
+    LOGZ_TOKEN = "${var.logz_token}"
+    LOGZ_URL = "${var.logz_url}"
+  }
 }
 
 

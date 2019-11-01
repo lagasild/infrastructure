@@ -12,10 +12,6 @@ resource "heroku_app" "test" {
     LOGZ_TOKEN = "${var.logz_token}"
     LOGZ_URL = "${var.logz_url}"
   }
-
-  config_vars = {
-    SPRING_PROFILES_ACTIVE= "heroku"
-  }
 }
 
 resource "heroku_app" "staging" {
@@ -26,10 +22,6 @@ resource "heroku_app" "staging" {
   sensitive_config_vars = {
     LOGZ_TOKEN = "${var.logz_token}"
     LOGZ_URL = "${var.logz_url}"
-  }
-
-  config_vars = {
-    SPRING_PROFILES_ACTIVE= "heroku"
   }
 }
 

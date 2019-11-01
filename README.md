@@ -1,8 +1,8 @@
 # Infrastructure [![Build Status](https://travis-ci.org/lagasild/infrastructure.svg?branch=master)](https://travis-ci.org/lagasild/infrastructure)
-Infrastructure code for exam at at Kristiania University College
+Infrastructure code for exam at at Kristiania University College. 
+The application may be found [here](https://github.com/lagasild/geiger). 
 
 ## Setup 
-TODO: ALL relevant travis keys for this build
 * `travis encrypt HEROKU_EMAILl=<your_email> --add`
 * `travis encrypt HEROKU_API_KEY=<your_key> --add`
 * `travis encrypt STATUSCAKE_USERNAME=<your_username> --add`

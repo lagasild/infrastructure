@@ -13,7 +13,7 @@ resource "heroku_app" "test" {
     LOGZ_URL = "${var.logz_url}"
   }
 
-  config_vars {
+  config_vars = {
     SPRING_PROFILES_ACTIVE= "heroku"
   }
 }
@@ -28,7 +28,7 @@ resource "heroku_app" "staging" {
     LOGZ_URL = "${var.logz_url}"
   }
 
-  config_vars {
+  config_vars = {
     SPRING_PROFILES_ACTIVE= "heroku"
   }
 }
@@ -43,7 +43,7 @@ resource "heroku_app" "production" {
     LOGZ_URL = "${var.logz_url}"
   }
 
-  config_vars {
+  config_vars = {
     SPRING_PROFILES_ACTIVE= "heroku"
   }
 }

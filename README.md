@@ -28,5 +28,3 @@ Creates infrastructure teams and schedules for
 on-call rotations. 
 
 
-![Terraform graph](./graph.svg)
-<img src="./graph.svg">

@@ -34,10 +34,6 @@ resource "heroku_app" "production" {
     LOGZ_TOKEN = "${var.logz_token}"
     LOGZ_URL = "${var.logz_url}"
   }
-
-  config_vars = {
-    SPRING_PROFILES_ACTIVE= "heroku"
-  }
 }
 
 

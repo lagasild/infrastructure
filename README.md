@@ -2,8 +2,9 @@
 Infrastructure code for exam at at Kristiania University College. 
 The application may be found [here](https://github.com/lagasild/geiger). 
 
-## Setup 
-* `travis encrypt HEROKU_EMAILl=<your_email> --add`
+## Setup
+* `travis encrypt AWS_ACCESS_KEY_ID=<your_key_id> --add` 
+* `travis encrypt AWS_SECRET_ACCESS_KEY=<your_key> --add`
 * `travis encrypt HEROKU_API_KEY=<your_key> --add`
 * `travis encrypt STATUSCAKE_USERNAME=<your_username> --add`
 * `travis encrypt STATUSCAKE_APIKEY=<your_key> --add`
@@ -12,7 +13,7 @@ The application may be found [here](https://github.com/lagasild/geiger).
 * `travis encrypt TF_VAR_logz_token=<your_key> --add`
 
 ## Description 
-[main.tf](./main.tf) is based on a local Terraform [module](./module). 
+Heroku-setup is based on a local Terraform [module](./module). 
 
 ### Heroku
 Deploys apps for _test_, _staging_, and _production_.
@@ -27,12 +28,4 @@ Creates infrastructure teams and schedules for
 on-call rotations. 
 
 
-
- 
-
-## Notes 
-### Opsgenie
-* Emails: 
-    * lagasild_opsgenie_owner@protonmail.com
-    * lagasild_opsgenie_first_user@protonmail.com
-    * lagasild_opsgenie_second_user@protonmail.com
+![Terraform tree](./graph.svg)

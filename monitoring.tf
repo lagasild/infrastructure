@@ -5,8 +5,17 @@ provider "statuscake" {
 
 # NOTE: I have added tests for staging and prod.
 
-resource "statuscake_test" "staging" {
+resource "statuscake_test" "test" {
     website_name = "app-staging-test"
+    website_url = "${module.heroku_module.test_url}devices"
+    test_type = "HTTP"
+    check_rate = "300"
+    contact_group = ["Default Contact Group"]
+}
+
+
+resource "statuscake_test" "staging" {
+    website_name = "app-staging-staging"
     website_url = "${module.heroku_module.staging_url}devices"
     test_type = "HTTP"
     check_rate = "300"
@@ -14,7 +23,7 @@ resource "statuscake_test" "staging" {
 }
 
 resource "statuscake_test" "production" {
-    website_name = "app-production-test"
+    website_name = "app-production-production"
     website_url = "${module.heroku_module.production_url}devices"
     test_type = "HTTP"
     check_rate = "300"

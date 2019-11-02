@@ -4,7 +4,7 @@ provider "opsgenie" {
 }
 
 ## Users:
-// because it alreayd exists
+// because it already exists
 data "opsgenie_user" "opsgenie_owner" {
   username  = "lagasild_opsgenie_owner@protonmail.com"
 }
@@ -47,6 +47,19 @@ resource "opsgenie_team" "exam_team" {
   }
 }
 
+## Contact methods
+resource "opsgenie_user_contact" "contact_first_user" {
+  method = "voice"
+  to = "47-99999999"
+  username = "${opsgenie_user.opsgenie_first_user.username}"
+}
+
+resource "opsgenie_user_contact" "contact_second_user" {
+  method = "email"
+  to = "${opsgenie_user.opsgenie_second_user.username}" #username is an email address
+  username = "${opsgenie_user.opsgenie_second_user.username}"
+}
+
 ## Schedule
 resource "opsgenie_schedule" "exam_schedule" {
   name          = "Exam Schedule"
@@ -64,11 +77,6 @@ resource "opsgenie_schedule_rotation" "exam_rotation" {
   end_date    = "2020-06-20T17:30:00Z"
   type        = "weekly"
   length      = 1
-
-  /*participant { # would assign entire team
-    type = "user"
-    id   = "${opsgenie_team.exam_team.id}"
-  }*/
 
   participant {
     type = "user"

@@ -11,6 +11,8 @@ The application may be found [here](https://github.com/lagasild/geiger).
 * `travis encrypt OPSGENIE_API_KEY=<your_key> --add`
 * `travis encrypt TF_VAR_logz_url=<your_url> --add`
 * `travis encrypt TF_VAR_logz_token=<your_key> --add`
+* `travis encrypt TF_VAR_opsgenie_owner_email=<your_email> --add`
+
 
 ## Description 
 Heroku-setup is based on a local Terraform [module](./module). 

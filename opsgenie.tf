@@ -6,7 +6,7 @@ provider "opsgenie" {
 ## Users:
 // because it already exists
 data "opsgenie_user" "opsgenie_owner" {
-  username  = "lagasild_opsgenie_owner@protonmail.com"
+  username = "${var.opsgenie_owner_email}"
 }
 
 resource "opsgenie_user" "opsgenie_first_user" {

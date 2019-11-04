@@ -6,8 +6,6 @@ terraform {
     }
 }
 
-variable "logz_token" {}
-variable "logz_url" {}
 module "heroku_module" {
     source = "./heroku_module"
     name = "devops-exam"

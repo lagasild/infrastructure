@@ -1,6 +1,11 @@
 # Infrastructure [![Build Status](https://travis-ci.org/lagasild/infrastructure.svg?branch=master)](https://travis-ci.org/lagasild/infrastructure)
 Infrastructure code for exam at at Kristiania University College. 
-The application may be found [here](https://github.com/lagasild/geiger). 
+The application may be found [here](https://github.com/lagasild/geiger).
+
+## About 
+This exam was initially written under a pseudonym account, @lagasild. 
+As the exam is over and grading is done, I have transferred the repository
+to my own account. In addition, I have changed the commit author to myself. 
 
 ## Setup
 * `travis encrypt AWS_ACCESS_KEY_ID=<your_key_id> --add` 
